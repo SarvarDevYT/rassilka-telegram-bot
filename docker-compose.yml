@@ -1,0 +1,11 @@
+services:
+  telegram-rassilka:
+    build: .
+    container_name: rassilka_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./sessions:/app/sessions
+      - ./reports:/app/reports
+      - ./uploads:/app/uploads
